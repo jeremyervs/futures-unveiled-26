@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Foresight Microsite Design System - Dark, Futuristic Theme */
+
+@layer base {
+  :root {
+    /* Core backgrounds - Deep navy/ink */
+    --background: 224 71% 4%;
+    --foreground: 0 0% 96%;
+    --bg-section-alt: 224 47% 6%;
+
+    /* Card and surface colors */
+    --card: 224 47% 6%;
+    --card-foreground: 0 0% 96%;
+    --card-border: 0 0% 100% / 0.08;
+
+    --popover: 224 47% 6%;
+    --popover-foreground: 0 0% 96%;
+
+    /* Primary - Deep navy for buttons and emphasis */
+    --primary: 224 71% 12%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Accent colors - Teal (health/good), Coral (risk), Amber (neutral) */
+    --accent-good: 165 82% 58%;
+    --accent-risk: 356 100% 68%;
+    --accent-neutral: 42 100% 67%;
+
+    /* Secondary and muted */
+    --secondary: 224 32% 18%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 224 32% 18%;
+    --muted-foreground: 240 5% 68%;
+
+    --accent: 224 32% 18%;
+    --accent-foreground: 0 0% 96%;
+
+    --destructive: 356 100% 68%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 100% / 0.08;
+    --input: 0 0% 100% / 0.08;
+    --ring: 165 82% 58%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-good: linear-gradient(135deg, hsl(165 82% 58%), hsl(165 82% 48%));
+    --gradient-risk: linear-gradient(135deg, hsl(356 100% 68%), hsl(356 100% 58%));
+    --gradient-hero: linear-gradient(180deg, hsl(224 71% 4%), hsl(224 47% 6%));
+    
+    /* Shadows and glows */
+    --shadow-card: 0 4px 24px hsla(224, 71%, 4%, 0.5);
+    --glow-good: 0 0 40px hsla(165, 82%, 58%, 0.3);
+    --glow-risk: 0 0 40px hsla(356, 100%, 68%, 0.3);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .section-wrapper {
+    @apply min-h-screen flex items-center justify-center py-20 px-6 md:px-12;
+  }
+
+  .content-container {
+    @apply max-w-7xl mx-auto w-full;
+  }
+
+  .card-elevated {
+    @apply rounded-2xl border bg-card p-6 shadow-lg transition-all duration-300;
+    border-color: hsl(var(--card-border));
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-elevated:hover {
+    @apply scale-[1.02] shadow-2xl;
+  }
+
+  .glow-good {
+    box-shadow: var(--glow-good);
+  }
+
+  .glow-risk {
+    box-shadow: var(--glow-risk);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-good to-accent-neutral bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+}
