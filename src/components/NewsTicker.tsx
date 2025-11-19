@@ -57,7 +57,7 @@ export const NewsTicker = ({ activeScenario }: NewsTickerProps) => {
   return (
     <TooltipProvider>
       <div
-        className="fixed bottom-0 left-0 right-0 z-50 h-12 backdrop-blur-xl border-t transition-all duration-500"
+        className="fixed bottom-0 left-0 right-0 z-50 h-14 sm:h-12 backdrop-blur-xl border-t transition-all duration-500"
         style={{
           backgroundColor:
             currentItem.scenario === "baseline"
@@ -71,7 +71,12 @@ export const NewsTicker = ({ activeScenario }: NewsTickerProps) => {
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className="h-full flex items-center justify-center px-4 gap-3">
+        <div className="h-full flex items-center px-2 sm:px-4 gap-2 sm:gap-3 overflow-hidden">
+          {/* NEWS Label */}
+          <div className="flex-shrink-0 px-2 sm:px-3 py-1 bg-foreground text-background text-xs sm:text-sm font-bold rounded">
+            NEWS
+          </div>
+          
           <AnimatePresence mode="wait">
             <motion.div
               key={currentItem.id}
@@ -79,21 +84,21 @@ export const NewsTicker = ({ activeScenario }: NewsTickerProps) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.5 }}
-              className="flex items-center gap-3 flex-wrap justify-center"
+              className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0"
             >
               {/* Scenario Badge */}
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Badge
-                    className={`text-xs font-bold px-2 py-0.5 ${
+                    className={`flex-shrink-0 text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 whitespace-nowrap ${
                       currentItem.scenario === "baseline"
                         ? "bg-accent-risk/20 text-accent-risk border-accent-risk/30"
                         : "bg-accent-good/20 text-accent-good border-accent-good/30"
                     }`}
                   >
                     {currentItem.scenario === "baseline"
-                      ? "BASELINE 2040"
-                      : "SYMBIOTIC 2040"}
+                      ? "BASELINE"
+                      : "SYMBIOTIC"}
                   </Badge>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -105,29 +110,29 @@ export const NewsTicker = ({ activeScenario }: NewsTickerProps) => {
                 </TooltipContent>
               </Tooltip>
 
-              {/* Driver Tags */}
-              {currentItem.drivers?.slice(0, 2).map((driver, idx) => (
-                <Badge
-                  key={idx}
-                  variant="outline"
-                  className="text-xs px-2 py-0.5 bg-muted/50 text-muted-foreground"
-                >
-                  {formatDriverTag(driver)}
-                </Badge>
-              ))}
+              {/* Driver Tags - Hidden on mobile */}
+              <div className="hidden sm:flex gap-2 flex-shrink-0">
+                {currentItem.drivers?.slice(0, 2).map((driver, idx) => (
+                  <Badge
+                    key={idx}
+                    variant="outline"
+                    className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 bg-muted/50 text-muted-foreground whitespace-nowrap"
+                  >
+                    {formatDriverTag(driver)}
+                  </Badge>
+                ))}
+              </div>
 
               {/* Headline Text */}
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <p className="text-sm text-foreground max-w-4xl text-center leading-tight">
+                  <p className="text-xs sm:text-sm text-foreground leading-tight flex-1 min-w-0 truncate">
                     {currentItem.text}
                   </p>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p className="text-xs">
-                    This is a plausible 2040 headline in the{" "}
-                    {currentItem.scenario === "baseline" ? "Baseline" : "Symbiotic"}{" "}
-                    world.
+                  <p className="text-xs max-w-sm">
+                    {currentItem.text}
                   </p>
                 </TooltipContent>
               </Tooltip>
