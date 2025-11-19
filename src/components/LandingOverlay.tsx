@@ -34,7 +34,7 @@ export const LandingOverlay = ({ onEnter }: LandingOverlayProps) => {
                          radial-gradient(circle at 80% 50%, hsl(var(--accent-risk) / 0.12) 0%, transparent 50%)`
       }} />
       
-      <div className="max-w-5xl mx-auto px-6 py-12 text-center space-y-10 relative z-10 min-h-screen flex flex-col justify-center">
+      <div className="max-w-5xl mx-auto px-6 text-center space-y-10 relative z-10">
         <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-accent-good/40 bg-accent-good/5 backdrop-blur-sm text-sm font-semibold text-accent-good mb-4 animate-scale-in glow-soft">
           <div className="w-2 h-2 rounded-full bg-accent-good animate-pulse" />
           Foresight Microsite
