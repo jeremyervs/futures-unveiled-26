@@ -7,25 +7,27 @@ interface ScenarioToggleProps {
 
 export const ScenarioToggle = ({ active, onChange }: ScenarioToggleProps) => {
   return (
-    <div className="flex justify-center mb-12">
-      <div className="relative inline-flex rounded-full bg-secondary p-1 border border-border">
+    <div className="flex justify-center mb-16">
+      <div className="relative inline-flex rounded-full bg-card/50 backdrop-blur-xl p-1.5 border-2 border-accent-good/20 shadow-2xl">
         <motion.div
-          className="absolute top-1 bottom-1 rounded-full"
+          className="absolute top-1.5 bottom-1.5 rounded-full"
           style={{
-            width: "calc(50% - 8px)",
-            backgroundColor: active === "baseline" ? "hsl(var(--accent-risk))" : "hsl(var(--accent-good))",
+            width: "calc(50% - 6px)",
+            background: active === "baseline" 
+              ? "linear-gradient(135deg, hsl(var(--accent-risk)) 0%, hsl(var(--accent-risk-bright)) 100%)"
+              : "linear-gradient(135deg, hsl(var(--accent-good)) 0%, hsl(var(--accent-good-bright)) 100%)",
             boxShadow: active === "baseline" ? "var(--glow-risk)" : "var(--glow-good)",
           }}
           animate={{
-            left: active === "baseline" ? "4px" : "calc(50% + 4px)",
+            left: active === "baseline" ? "6px" : "calc(50% + 6px)",
           }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          transition={{ type: "spring", stiffness: 400, damping: 35 }}
         />
         
         <button
           onClick={() => onChange("baseline")}
-          className={`relative z-10 w-[140px] sm:w-[180px] md:w-[200px] py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-colors duration-300 text-center ${
-            active === "baseline" ? "text-background" : "text-muted-foreground"
+          className={`relative z-10 w-[160px] sm:w-[200px] md:w-[220px] py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-center ${
+            active === "baseline" ? "text-background scale-105" : "text-muted-foreground hover:text-foreground"
           }`}
         >
           Baseline World
@@ -33,8 +35,8 @@ export const ScenarioToggle = ({ active, onChange }: ScenarioToggleProps) => {
         
         <button
           onClick={() => onChange("transformation")}
-          className={`relative z-10 w-[140px] sm:w-[180px] md:w-[200px] py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-colors duration-300 text-center ${
-            active === "transformation" ? "text-background" : "text-muted-foreground"
+          className={`relative z-10 w-[160px] sm:w-[200px] md:w-[220px] py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-center ${
+            active === "transformation" ? "text-background scale-105" : "text-muted-foreground hover:text-foreground"
           }`}
         >
           Transformation World

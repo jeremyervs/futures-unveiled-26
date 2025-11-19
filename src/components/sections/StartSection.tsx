@@ -15,11 +15,11 @@ export const StartSection = () => {
       
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background z-0" />
 
-      <div className="content-container relative z-10 grid lg:grid-cols-2 gap-12 items-center px-6">
-        <div className="space-y-6 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+      <div className="content-container relative z-10 grid lg:grid-cols-2 gap-16 items-center px-6">
+        <div className="space-y-8 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight">
             By 2040, AI will be everywhere.
-            <span className="block mt-3 gradient-text">
+            <span className="block mt-6 gradient-text animate-pulse-glow">
               The question is: what happens to suffering?
             </span>
           </h1>
@@ -28,24 +28,24 @@ export const StartSection = () => {
             This project explores how the universal integration of AI will reshape human suffering and well-being over the next 15 years. We move beyond traditional definitions to investigate emerging existential, psychological, and social challenges.
           </p>
 
-          <div className="space-y-3 pt-4">
-            <div className="flex items-start gap-3">
-              <CheckCircle className="text-accent-good mt-1 flex-shrink-0" size={20} />
-              <p className="text-foreground">Explore two distinct worlds of 2040</p>
+          <div className="space-y-4 pt-6">
+            <div className="flex items-start gap-4 group hover:translate-x-2 transition-transform duration-300">
+              <CheckCircle className="text-accent-good mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" size={24} />
+              <p className="text-foreground text-lg font-medium">Explore two distinct worlds of 2040</p>
             </div>
-            <div className="flex items-start gap-3">
-              <CheckCircle className="text-accent-good mt-1 flex-shrink-0" size={20} />
-              <p className="text-foreground">Discover the six forces driving these futures</p>
+            <div className="flex items-start gap-4 group hover:translate-x-2 transition-transform duration-300">
+              <CheckCircle className="text-accent-good mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" size={24} />
+              <p className="text-foreground text-lg font-medium">Discover the six forces driving these futures</p>
             </div>
-            <div className="flex items-start gap-3">
-              <CheckCircle className="text-accent-good mt-1 flex-shrink-0" size={20} />
-              <p className="text-foreground">Decide how we respond today</p>
+            <div className="flex items-start gap-4 group hover:translate-x-2 transition-transform duration-300">
+              <CheckCircle className="text-accent-good mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" size={24} />
+              <p className="text-foreground text-lg font-medium">Decide how we respond today</p>
             </div>
           </div>
         </div>
 
-        <div className="space-y-4 animate-slide-up">
-          <h3 className="text-2xl font-semibold mb-6 text-foreground">Your Journey</h3>
+        <div className="space-y-5 animate-slide-up">
+          <h3 className="text-3xl font-bold mb-8 text-foreground">Your Journey</h3>
           {[
             { num: "01", label: "Why This Project", color: "accent-neutral" },
             { num: "02", label: "Signals Today", color: "accent-neutral" },
@@ -56,12 +56,13 @@ export const StartSection = () => {
           ].map((step, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border hover:bg-card transition-colors"
+              className="flex items-center gap-5 p-5 rounded-2xl bg-card/60 backdrop-blur-sm border-2 border-accent-good/20 hover:border-accent-good/50 hover:bg-card hover:-translate-y-1 transition-all duration-300 group cursor-pointer shadow-lg hover:shadow-xl"
+              style={{ animationDelay: `${idx * 100}ms` }}
             >
-              <div className={`text-2xl font-bold text-${step.color}`}>
+              <div className={`text-3xl font-bold bg-gradient-to-br from-${step.color} to-${step.color}-bright bg-clip-text text-transparent group-hover:scale-110 transition-transform`}>
                 {step.num}
               </div>
-              <div className="text-foreground font-medium">{step.label}</div>
+              <div className="text-foreground font-semibold text-lg group-hover:text-accent-good-bright transition-colors">{step.label}</div>
             </div>
           ))}
         </div>
