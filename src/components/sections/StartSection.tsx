@@ -3,7 +3,7 @@ import heroBackground from "@/assets/hero-background.jpg";
 
 export const StartSection = () => {
   return (
-    <section id="start" className="relative min-h-screen flex items-center justify-center pt-32">
+    <section id="start" className="relative min-h-screen flex items-center justify-center pt-32 pb-32">
       <div
         className="absolute inset-0 z-0 opacity-30"
         style={{
