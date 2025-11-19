@@ -6,31 +6,37 @@ const signals = [
     category: "Mental Health & Well-being",
     title: "AI Mental Health Tools: Promise vs Peril",
     description: "Apps like Woebot and Wysa offer 24/7 support, but studies show some give unsafe advice and lack regulation.",
+    source: "https://news.stanford.edu/stories/2025/06/ai-mental-health-care-tools-dangers-risks",
   },
   {
     category: "Trust & Information",
     title: "AI and the Erosion of Shared Truth",
     description: "Deepfakes, synthetic content, and AI-generated misinformation undermine public trust and shared reality.",
+    source: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11165650/",
   },
   {
     category: "Social Connection",
     title: "The Social Deficit at Work",
     description: "Remote work and AI mediation reduce spontaneous human interaction, leading to increased workplace isolation.",
+    source: "https://www.psychologytoday.com/us/blog/urban-survival/202507/is-ai-making-us-lonelier-at-work",
   },
   {
     category: "Purpose & Meaning",
     title: "The AI Crisis of Purpose",
     description: "Young workers face existential questions as AI takes over cognitive tasks once central to identity and meaning.",
+    source: "https://digitaleconomy.stanford.edu/wp-content/uploads/2025/08/Canaries_BrynjolfssonChandarChen.pdf",
   },
   {
     category: "Governance",
     title: "Innovation Outpacing Policy",
     description: "Regulatory frameworks lag years behind AI capabilities, creating dangerous governance gaps.",
+    source: "https://portulansinstitute.org/multi-stakeholder-ai-governance/",
   },
   {
     category: "Healthcare",
     title: "Personalized AI Medicine",
     description: "Digital twins and AI diagnostics promise to dramatically reduce physical suffering through early intervention.",
+    source: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12274247/",
   },
 ];
 
