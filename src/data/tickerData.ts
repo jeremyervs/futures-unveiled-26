@@ -58,7 +58,7 @@ export const tickerItems: TickerItem[] = [
   {
     id: 'b9',
     scenario: 'baseline',
-    text: 'AI-powered griefbots spark controversy after families receive targeted ads during anniversary of loved one's death.',
+    text: "AI-powered griefbots spark controversy after families receive targeted ads during anniversary of loved one's death.",
     drivers: ['connection', 'info-integrity']
   },
   {
