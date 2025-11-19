@@ -59,7 +59,13 @@ export const StartSection = () => {
               className="flex items-center gap-5 p-5 rounded-2xl bg-card/60 backdrop-blur-sm border-2 border-accent-good/20 hover:border-accent-good/50 hover:bg-card hover:-translate-y-1 transition-all duration-300 group cursor-pointer shadow-lg hover:shadow-xl"
               style={{ animationDelay: `${idx * 100}ms` }}
             >
-              <div className={`text-3xl font-bold bg-gradient-to-br from-${step.color} to-${step.color}-bright bg-clip-text text-transparent group-hover:scale-110 transition-transform`}>
+              <div 
+                className={`text-3xl font-bold group-hover:scale-110 transition-transform ${
+                  step.color === 'accent-good' ? 'text-accent-good' : 
+                  step.color === 'accent-risk' ? 'text-accent-risk' : 
+                  'text-accent-neutral'
+                }`}
+              >
                 {step.num}
               </div>
               <div className="text-foreground font-semibold text-lg group-hover:text-accent-good-bright transition-colors">{step.label}</div>
