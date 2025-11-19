@@ -38,9 +38,21 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
-          good: "hsl(var(--accent-good))",
-          risk: "hsl(var(--accent-risk))",
-          neutral: "hsl(var(--accent-neutral))",
+          good: {
+            DEFAULT: "hsl(var(--accent-good))",
+            bright: "hsl(var(--accent-good-bright))",
+            dim: "hsl(var(--accent-good-dim))",
+          },
+          risk: {
+            DEFAULT: "hsl(var(--accent-risk))",
+            bright: "hsl(var(--accent-risk-bright))",
+            dim: "hsl(var(--accent-risk-dim))",
+          },
+          neutral: {
+            DEFAULT: "hsl(var(--accent-neutral))",
+            bright: "hsl(var(--accent-neutral-bright))",
+            dim: "hsl(var(--accent-neutral-dim))",
+          },
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -77,6 +89,9 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "shimmer": "shimmer 3s linear infinite",
+        "pulse-glow": "pulse-glow 4s ease-in-out infinite",
       },
     },
   },

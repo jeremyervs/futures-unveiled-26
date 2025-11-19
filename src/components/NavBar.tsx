@@ -47,21 +47,21 @@ export const NavBar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="font-bold text-lg gradient-text">The Future of Suffering</div>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-2xl border-b border-accent-good/20 shadow-lg">
+      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+        <div className="font-bold text-xl gradient-text tracking-tight">The Future of Suffering</div>
         
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-2">
           {sections.map((section) => (
             <Button
               key={section.id}
               variant="ghost"
               size="sm"
               onClick={() => scrollToSection(section.id)}
-              className={`transition-colors ${
+              className={`transition-all duration-300 rounded-xl ${
                 activeSection === section.id
-                  ? "text-accent-good"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "text-accent-good bg-accent-good/10 border border-accent-good/30 glow-soft"
+                  : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
               }`}
             >
               {section.label}
@@ -69,14 +69,14 @@ export const NavBar = () => {
           ))}
         </div>
 
-        <div className="px-3 py-1.5 rounded-full border border-border text-xs font-medium">
+        <div className="px-4 py-2 rounded-full border-2 border-accent-good/30 bg-accent-good/5 text-xs font-bold text-accent-good backdrop-blur-sm">
           Foresight Microsite
         </div>
       </div>
       
       <div
-        className="h-0.5 bg-gradient-to-r from-accent-good via-accent-neutral to-accent-risk transition-all duration-300"
-        style={{ width: `${progress}%` }}
+        className="h-1 bg-gradient-to-r from-accent-good via-accent-neutral to-accent-risk transition-all duration-300 shadow-lg"
+        style={{ width: `${progress}%`, boxShadow: '0 0 20px hsl(var(--accent-good) / 0.5)' }}
       />
     </nav>
   );
