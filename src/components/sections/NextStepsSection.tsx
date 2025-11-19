@@ -61,7 +61,7 @@ export const NextStepsSection = () => {
   };
 
   return (
-    <section id="next" className="section-wrapper bg-[hsl(var(--bg-section-alt))]">
+    <section id="next" className="relative min-h-screen flex items-center justify-center py-32 px-6 md:px-16 bg-[hsl(var(--bg-section-alt))]">
       <div className="content-container space-y-16">
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">So What? Choices Between Now and 2040</h2>

@@ -81,7 +81,7 @@ export const FuturesSection = () => {
   };
 
   return (
-    <section id="futures" className="section-wrapper">
+    <section id="futures" className="relative min-h-screen flex items-center justify-center py-32 px-6 md:px-16">
       <div className="content-container space-y-12">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-4xl md:text-5xl font-bold">Two Futures of 2040</h2>

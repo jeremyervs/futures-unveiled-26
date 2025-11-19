@@ -57,7 +57,7 @@ const timeline = [
 
 export const SignalsSection = () => {
   return (
-    <section id="signals" className="section-wrapper">
+    <section id="signals" className="relative min-h-screen flex items-center justify-center py-32 px-6 md:px-16">
       <div className="content-container space-y-16">
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">Signals from Today</h2>

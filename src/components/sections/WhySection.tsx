@@ -1,6 +1,6 @@
 export const WhySection = () => {
   return (
-    <section id="why" className="section-wrapper bg-[hsl(var(--bg-section-alt))]">
+    <section id="why" className="relative min-h-screen flex items-center justify-center py-32 px-6 md:px-16 bg-[hsl(var(--bg-section-alt))]">
       <div className="content-container space-y-12">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold">Why This Project</h2>
