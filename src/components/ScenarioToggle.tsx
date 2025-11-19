@@ -10,7 +10,7 @@ export const ScenarioToggle = ({ active, onChange }: ScenarioToggleProps) => {
     <div className="flex justify-center mb-16">
       <div className="relative inline-flex rounded-full bg-card/50 backdrop-blur-xl p-1.5 border-2 border-accent-good/20 shadow-2xl">
         <motion.div
-          className="absolute top-1.5 bottom-1.5 rounded-full"
+          className="absolute inset-y-1.5 rounded-full"
           style={{
             width: "calc(50% - 6px)",
             background: active === "baseline" 
@@ -19,7 +19,7 @@ export const ScenarioToggle = ({ active, onChange }: ScenarioToggleProps) => {
             boxShadow: active === "baseline" ? "var(--glow-risk)" : "var(--glow-good)",
           }}
           animate={{
-            left: active === "baseline" ? "6px" : "calc(50% + 6px)",
+            left: active === "baseline" ? "6px" : "calc(50% + 0px)",
           }}
           transition={{ type: "spring", stiffness: 400, damping: 35 }}
         />
