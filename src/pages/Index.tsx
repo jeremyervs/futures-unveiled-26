@@ -17,20 +17,24 @@ const Index = () => {
   return (
     <>
       {showOverlay && <LandingOverlay onEnter={() => setShowOverlay(false)} />}
-      <NavBar />
-      <div className="pt-16 pb-12">
-        <StartSection />
-        <WhySection />
-        <SignalsSection />
-        <DriversSection />
-        <FuturesSection 
-          activeScenario={activeScenario}
-          setActiveScenario={setActiveScenario}
-        />
-        <NextStepsSection />
-        <ProcessSection />
-      </div>
-      <NewsTicker activeScenario={activeScenario} />
+      {!showOverlay && (
+        <>
+          <NavBar />
+          <div className="pt-16 pb-12">
+            <StartSection />
+            <WhySection />
+            <SignalsSection />
+            <DriversSection />
+            <FuturesSection 
+              activeScenario={activeScenario}
+              setActiveScenario={setActiveScenario}
+            />
+            <NextStepsSection />
+            <ProcessSection />
+          </div>
+          <NewsTicker activeScenario={activeScenario} />
+        </>
+      )}
     </>
   );
 };
