@@ -47,12 +47,12 @@ export const StartSection = () => {
         <div className="space-y-5 animate-slide-up">
           <h3 className="text-3xl font-bold mb-8 text-foreground">Your Journey</h3>
           {[
-            { num: "01", label: "Why This Project", color: "accent-neutral" },
-            { num: "02", label: "Signals Today", color: "accent-neutral" },
-            { num: "03", label: "Six Drivers", color: "accent-neutral" },
-            { num: "04", label: "Two Futures (2040)", color: "accent-good" },
-            { num: "05", label: "What We Do Next", color: "accent-risk" },
-            { num: "06", label: "About Foresight", color: "accent-neutral" },
+            { num: "01", label: "Why This Project" },
+            { num: "02", label: "Signals Today" },
+            { num: "03", label: "Six Drivers" },
+            { num: "04", label: "Two Futures (2040)" },
+            { num: "05", label: "What We Do Next" },
+            { num: "06", label: "About Foresight" },
           ].map((step, idx) => (
             <div
               key={idx}
@@ -60,11 +60,7 @@ export const StartSection = () => {
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               <div 
-                className={`text-3xl font-bold group-hover:scale-110 transition-transform ${
-                  step.color === 'accent-good' ? 'text-accent-good' : 
-                  step.color === 'accent-risk' ? 'text-accent-risk' : 
-                  'text-accent-neutral'
-                }`}
+                className="text-3xl font-bold text-yellow-400 group-hover:scale-110 transition-transform"
               >
                 {step.num}
               </div>
