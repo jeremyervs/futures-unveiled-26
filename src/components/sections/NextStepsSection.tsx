@@ -75,9 +75,9 @@ export const NextStepsSection = () => {
             <div key={key} className="space-y-6">
               <h3 className="text-2xl font-semibold text-accent-neutral">{horizon.title}</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-4 flex flex-col">
                 {horizon.choices.map((choice, idx) => (
-                  <div key={idx} className="card-elevated space-y-2">
+                  <div key={idx} className="card-elevated space-y-2 flex-1 flex flex-col justify-between min-h-[120px]">
                     <div className="flex items-center gap-2">
                       <span className="px-2 py-1 rounded bg-accent-good/20 text-accent-good text-xs font-bold">
                         {choice.type}
