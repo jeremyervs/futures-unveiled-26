@@ -1,4 +1,5 @@
 import { SignalCard } from "@/components/SignalCard";
+import { Zap, MessageSquare, Landmark } from "lucide-react";
 
 const signals = [
   {
@@ -38,16 +39,19 @@ const timeline = [
     date: "2017",
     title: '"Attention Is All You Need"',
     description: "Transformer paper published, enabling modern AI capabilities.",
+    icon: Zap,
   },
   {
     date: "Nov 2022",
     title: "ChatGPT Launch",
     description: "Public AI moment that changed everything about accessibility and adoption.",
+    icon: MessageSquare,
   },
   {
     date: "Jan 23, 2025",
     title: "US AI Executive Order",
     description: "Federal government prioritizes rapid AI adoption across agencies.",
+    icon: Landmark,
   },
 ];
 
@@ -75,18 +79,21 @@ export const SignalsSection = () => {
             <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-border -translate-y-1/2" />
             
             <div className="relative grid md:grid-cols-3 gap-8">
-              {timeline.map((event, idx) => (
-                <div key={idx} className="relative h-full">
-                  <div className="card-elevated text-center space-y-3 h-full min-h-[240px] flex flex-col justify-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent-good text-background font-bold mx-auto">
-                      {idx + 1}
+              {timeline.map((event, idx) => {
+                const Icon = event.icon;
+                return (
+                  <div key={idx} className="relative h-full">
+                    <div className="card-elevated text-center space-y-3 h-full min-h-[240px] flex flex-col justify-center">
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent-good text-background mx-auto">
+                        <Icon size={24} />
+                      </div>
+                      <div className="text-accent-neutral font-bold text-lg">{event.date}</div>
+                      <h4 className="text-foreground font-semibold">{event.title}</h4>
+                      <p className="text-sm text-muted-foreground">{event.description}</p>
                     </div>
-                    <div className="text-accent-neutral font-bold text-lg">{event.date}</div>
-                    <h4 className="text-foreground font-semibold">{event.title}</h4>
-                    <p className="text-sm text-muted-foreground">{event.description}</p>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
