@@ -17,7 +17,7 @@ export const StartSection = () => {
 
       <div className="content-container relative z-10 grid lg:grid-cols-2 gap-16 items-center px-6">
         <div className="space-y-8 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-normal">
+          <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight">
             By 2040, AI will be everywhere.
             <span className="block mt-6 gradient-text animate-pulse-glow">
               The question is: what happens to suffering?
