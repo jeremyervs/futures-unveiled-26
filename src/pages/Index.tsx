@@ -8,23 +8,29 @@ import { DriversSection } from "@/components/sections/DriversSection";
 import { FuturesSection } from "@/components/sections/FuturesSection";
 import { NextStepsSection } from "@/components/sections/NextStepsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
+import { NewsTicker } from "@/components/NewsTicker";
 
 const Index = () => {
   const [showOverlay, setShowOverlay] = useState(true);
+  const [activeScenario, setActiveScenario] = useState<"baseline" | "transformation">("baseline");
 
   return (
     <>
       {showOverlay && <LandingOverlay onEnter={() => setShowOverlay(false)} />}
       <NavBar />
-      <div className="pt-16">
+      <div className="pt-16 pb-12">
         <StartSection />
         <WhySection />
         <SignalsSection />
         <DriversSection />
-        <FuturesSection />
+        <FuturesSection 
+          activeScenario={activeScenario}
+          setActiveScenario={setActiveScenario}
+        />
         <NextStepsSection />
         <ProcessSection />
       </div>
+      <NewsTicker activeScenario={activeScenario} />
     </>
   );
 };

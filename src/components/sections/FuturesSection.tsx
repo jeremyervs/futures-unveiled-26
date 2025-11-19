@@ -1,10 +1,14 @@
-import { useState } from "react";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScenarioToggle } from "@/components/ScenarioToggle";
 import { SufferingProfile } from "@/components/SufferingProfile";
 import { generateScenarioPDF } from "@/utils/generateScenarioPDF";
 import { toast } from "sonner";
+
+interface FuturesSectionProps {
+  activeScenario: "baseline" | "transformation";
+  setActiveScenario: (scenario: "baseline" | "transformation") => void;
+}
 
 const baselineData = {
   title: "The Gilded Cage & The Algorithmic Treadmill",
@@ -65,9 +69,7 @@ const transformationData = {
   ],
 };
 
-export const FuturesSection = () => {
-  const [activeScenario, setActiveScenario] = useState<"baseline" | "transformation">("baseline");
-  
+export const FuturesSection = ({ activeScenario, setActiveScenario }: FuturesSectionProps) => {
   const data = activeScenario === "baseline" ? baselineData : transformationData;
 
   const handleDownloadPDF = () => {
